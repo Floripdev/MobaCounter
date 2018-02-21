@@ -77,8 +77,8 @@
 
     <Button
         android:id="@+id/button_new"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/button_new_game"
@@ -96,12 +96,11 @@
         app:layout_constraintEnd_toEndOf="@+id/scrollView3" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/rangliste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
         app:srcCompat="@drawable/rangliste_text"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="4dp" />
 
 </android.support.constraint.ConstraintLayout>

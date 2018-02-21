@@ -58,5 +58,15 @@ public class game {
         flashes++;
 
     }
+    public void flash(int player){
+        for(int i = 0; i < playerCnt; i++){
+            if(i != player){
+                players[i].decLife();
+
+            }
+
+        }
+
+    }
 
 }

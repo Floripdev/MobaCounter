@@ -10,12 +10,13 @@ import android.widget.TextView;
 
 public class lifeSelect extends AppCompatActivity {
 
-    EditText lifeText = findViewById(R.id.lifeInput);
+    EditText lifeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_select);
+        lifeText = findViewById(R.id.lifeInput);
 
         Button accept = findViewById(R.id.button_accept);
         Button plus = findViewById(R.id.button_plus);

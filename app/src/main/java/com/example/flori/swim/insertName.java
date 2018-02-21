@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class insertName extends AppCompatActivity {
 
-    EditText text = findViewById(R.id.playerName);
+    EditText text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,30 +18,34 @@ public class insertName extends AppCompatActivity {
         setContentView(R.layout.activity_insert_name);
 
         Button nextButton = findViewById(R.id.button_next);
-
+        text = findViewById(R.id.playerName);
 
 
         nextButton.setOnClickListener(next);
 
     }
-    View.OnClickListener next = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            playerSelect.activeGame.players[playerSelect.activeGame.getPlayerTmp()].setPlayerName(text.getText().toString());
-            playerSelect.activeGame.incTmp();
-            if(playerSelect.activeGame.getPlayerTmp() == playerSelect.activeGame.getPlayerCnt()){
-                finish();
-                startActivity(new Intent(insertName.this, lifeSelect.class));
+    View.OnClickListener next;
 
-            }else{
-                finish();
-                startActivity(new Intent(insertName.this, insertName.class));
+    {
+        next = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playerSelect.activeGame.players[playerSelect.activeGame.getPlayerTmp()].setPlayerName(text.getText().toString());
+                playerSelect.activeGame.incTmp();
+                if (playerSelect.activeGame.getPlayerTmp() == playerSelect.activeGame.getPlayerCnt()) {
+                    finish();
+                    startActivity(new Intent(insertName.this, lifeSelect.class));
+
+                } else {
+                    finish();
+                    startActivity(new Intent(insertName.this, insertName.class));
+
+                }
+
 
             }
-
-
-        }
-    };
+        };
+    }
 
 
 }

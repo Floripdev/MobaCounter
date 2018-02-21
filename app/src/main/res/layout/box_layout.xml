@@ -19,6 +19,7 @@
             android:layout_marginRight="53dp"
             android:text="3"
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -32,6 +33,7 @@
             android:layout_marginStart="12dp"
             android:text="Spielername"
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <Button
@@ -42,6 +44,7 @@
             android:layout_alignStart="@+id/pos1_name"
             android:layout_below="@+id/pos1_name"
             android:layout_marginTop="14dp"
+            android:textSize="0dp"
             android:background="@drawable/button_life" />
 
         <Button
@@ -53,6 +56,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginEnd="38dp"
             android:layout_marginRight="38dp"
+            android:textSize="0dp"
             android:background="@drawable/button_flash" />
     </RelativeLayout>
 

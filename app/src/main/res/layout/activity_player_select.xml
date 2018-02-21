@@ -16,7 +16,8 @@
         android:layout_marginTop="84dp"
         android:background="@drawable/playercntb2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="236dp" />
 
     <Button
         android:id="@+id/playerCnt_3"
@@ -26,7 +27,8 @@
         android:layout_marginStart="232dp"
         android:background="@drawable/playercntb3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="232dp" />
 
     <Button
         android:id="@+id/playerCnt_4"
@@ -36,7 +38,8 @@
         android:layout_marginEnd="236dp"
         android:background="@drawable/playercntb4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="236dp" />
 
     <Button
         android:id="@+id/playerCnt_5"
@@ -46,7 +49,8 @@
         android:layout_marginTop="192dp"
         android:background="@drawable/playercntb5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="232dp" />
 
     <Button
         android:id="@+id/playerCnt_6"
@@ -56,7 +60,8 @@
         android:layout_marginTop="308dp"
         android:background="@drawable/playercntb6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="236dp" />
 
     <Button
         android:id="@+id/playerCnt_7"
@@ -66,7 +71,8 @@
         android:layout_marginTop="308dp"
         android:background="@drawable/playercntb7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="232dp" />
 
     <Button
         android:id="@+id/playerCnt_8"
@@ -86,7 +92,8 @@
         android:layout_marginEnd="40dp"
         android:background="@drawable/playercntb9"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="40dp" />
 
 
 </android.support.constraint.ConstraintLayout>

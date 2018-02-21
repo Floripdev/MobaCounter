@@ -2,19 +2,27 @@ package com.example.flori.swim;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class mainScreen extends AppCompatActivity {
 
     View[] v = new View[playerSelect.activeGame.getPlayerCnt()];
+    static ConstraintLayout cl;
+    static ScrollView sv;
+    private Chronometer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,15 @@ public class mainScreen extends AppCompatActivity {
         Button settingsButton = findViewById(R.id.button_settings);
         settingsButton.setOnClickListener(settingsListener);
 
+        Button newButton = findViewById(R.id.button_new);
+        newButton.setOnClickListener(newGameListener);
+
+        cl = findViewById(R.id.statistik);
+        sv = findViewById(R.id.scrollView3);
+
+        timer = (Chronometer) findViewById(R.id.timer);
+        timer.setBase(SystemClock.elapsedRealtime());
+        timer.start();
 
         refreshStats();
         insertBoxes();
@@ -38,7 +55,7 @@ public class mainScreen extends AppCompatActivity {
     View.OnClickListener newGameListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            startActivity(mainScreen.this, newGamePopUp.class);
+            startActivity(new Intent(mainScreen.this, newGamePopUp.class));
 
         }
     };
@@ -143,5 +160,6 @@ public class mainScreen extends AppCompatActivity {
         roundsText.setText("" + playerSelect.activeGame.rounds);
 
     }
+
 
 }

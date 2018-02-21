@@ -22,7 +22,9 @@
         <activity android:name=".lifeSelect" />
         <activity android:name=".mainScreen" />
         <activity android:name=".settings" />
-        <activity android:name=".newGamePopUp"></activity>
+        <activity
+            android:name=".newGamePopUp"
+            android:theme="@style/AppTheme.popStyle" />
     </application>
 
 </manifest>

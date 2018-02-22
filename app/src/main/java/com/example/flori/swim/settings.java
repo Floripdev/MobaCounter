@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -31,11 +32,11 @@ public class settings extends AppCompatActivity {
                 //Button ändern + statistik entfernen
                 mainScreen.cl.setVisibility(View.INVISIBLE);
                 status=false;
-                //mainScreen.sv.getLayoutParams().height =510;
+                mainScreen.sv.getLayoutParams().height += 255; //ConstraintLayout.LayoutParams.MATCH_PARENT;
             } else{
                 mainScreen.cl.setVisibility(View.VISIBLE);
                 status = true;
-                //mainScreen.sv.getLayoutParams().height =430;
+                mainScreen.sv.getLayoutParams().height -= 255;
 
             }
 

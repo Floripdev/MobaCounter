@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,10 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class mainScreen extends AppCompatActivity {
 
@@ -23,6 +20,7 @@ public class mainScreen extends AppCompatActivity {
     static ConstraintLayout cl;
     static ScrollView sv;
     private Chronometer timer;
+    player tmpPlayers[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +49,11 @@ public class mainScreen extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+
+    }
+
 
     View.OnClickListener newGameListener = new View.OnClickListener() {
         @Override
@@ -71,6 +74,8 @@ public class mainScreen extends AppCompatActivity {
                 playerSelect.activeGame.countRoundsUp();
 
             }
+            tmpPlayers = playerSelect.activeGame.players;
+
             insertValues();
             refreshStats();
 
@@ -160,6 +165,21 @@ public class mainScreen extends AppCompatActivity {
         roundsText.setText("" + playerSelect.activeGame.rounds);
 
     }
+/*
+    public player bubblesort(player zusortieren) {
+        int temp;
+        for(int i=1; i<zusortieren; i++) {
+            for(int j=0; j<zusortieren-i; j++) {
+                if(zusortieren[j]>zusortieren[j+1]) {
+                    temp=zusortieren[j];
+                    zusortieren[j]=zusortieren[j+1];
+                    zusortieren[j+1]=temp;
+                }
+
+            }
+        }
+        return zusortieren;
+    }*/
 
 
 }

@@ -12,88 +12,90 @@
         android:id="@+id/playerCnt_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="236dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/playercntb2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="236dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/playerCnt_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="380dp"
-        android:layout_marginStart="232dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/playercntb3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="232dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/playerCnt_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
-        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="93dp"
+        android:layout_marginTop="93dp"
         android:background="@drawable/playercntb4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="236dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/playerCnt_6"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_2"
+        app:layout_constraintTop_toTopOf="@+id/playerCnt_2" />
 
     <Button
         android:id="@+id/playerCnt_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginBottom="93dp"
+        android:layout_marginTop="93dp"
         android:background="@drawable/playercntb5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="232dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/playerCnt_7"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_3"
+        app:layout_constraintTop_toTopOf="@+id/playerCnt_3" />
 
     <Button
         android:id="@+id/playerCnt_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="236dp"
-        android:layout_marginTop="308dp"
         android:background="@drawable/playercntb6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="236dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/playerCnt_7"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_8"
+        app:layout_constraintTop_toTopOf="@+id/playerCnt_7" />
 
     <Button
         android:id="@+id/playerCnt_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginBottom="92dp"
         android:background="@drawable/playercntb7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="232dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/playerCnt_9"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_9" />
 
     <Button
         android:id="@+id/playerCnt_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/playercntb8"
-        app:layout_constraintBottom_toBottomOf="@+id/playerCnt_9"
-        app:layout_constraintEnd_toEndOf="@+id/playerCnt_6"
-        app:layout_constraintStart_toStartOf="@+id/playerCnt_6"
-        app:layout_constraintTop_toTopOf="@+id/playerCnt_9" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/playerCnt_4"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_4" />
 
     <Button
         android:id="@+id/playerCnt_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/playercntb9"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="40dp" />
+        app:layout_constraintEnd_toEndOf="@+id/playerCnt_5"
+        app:layout_constraintStart_toStartOf="@+id/playerCnt_5" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lifeselect_text" />
 
 </android.support.constraint.ConstraintLayout>

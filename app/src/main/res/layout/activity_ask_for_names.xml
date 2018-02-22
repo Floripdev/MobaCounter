@@ -16,7 +16,8 @@
         android:layout_marginStart="35dp"
         android:background="@drawable/button_yes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="35dp" />
 
     <Button
         android:id="@+id/button_no"
@@ -26,7 +27,8 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/button_no"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="35dp" />
 
     <ImageView
         android:id="@+id/imageView2"

@@ -25,6 +25,11 @@ public class askForNames extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(askForNames.this, playerSelect.class));
+    }
+
     View.OnClickListener decision = new View.OnClickListener(){
 
 

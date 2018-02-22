@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class lifeSelect extends AppCompatActivity {
 
@@ -29,6 +28,10 @@ public class lifeSelect extends AppCompatActivity {
             minus.setOnClickListener(sideButtons);
 
         }
+    @Override
+    public void onBackPressed() {
+
+    }
 
 
     View.OnClickListener lifeListener = new View.OnClickListener() {

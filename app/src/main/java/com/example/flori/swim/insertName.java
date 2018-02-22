@@ -24,6 +24,12 @@ public class insertName extends AppCompatActivity {
         nextButton.setOnClickListener(next);
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
     View.OnClickListener next;
 
     {

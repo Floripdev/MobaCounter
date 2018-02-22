@@ -38,6 +38,11 @@ public class newGamePopUp extends Activity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+
+    }
 
     View.OnClickListener resumeListener = new View.OnClickListener() {
         @Override

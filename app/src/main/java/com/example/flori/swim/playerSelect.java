@@ -33,6 +33,12 @@ public class playerSelect extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
     View.OnClickListener buttonCount = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

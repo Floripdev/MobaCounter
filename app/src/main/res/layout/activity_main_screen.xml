@@ -7,17 +7,29 @@
     android:background="@drawable/background"
     tools:context="com.example.flori.swim.mainScreen">
 
+    <ImageView
+        android:id="@+id/rangliste"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rangliste_text" />
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
-        android:layout_height="430dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="431dp"
 
+        android:layout_marginTop="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/rangliste">
 
         <LinearLayout
             android:id="@+id/mainLayout"
@@ -34,34 +46,37 @@
         android:id="@+id/button_new"
         android:layout_width="37dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="11dp"
         android:background="@drawable/button_new_game"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toStartOf="@+id/button_settings" />
+        app:layout_constraintEnd_toStartOf="@+id/button_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_settings"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="11dp"
         android:background="@drawable/button_settings"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rangliste" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/statistik"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="80dp"
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rangliste"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="490dp">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textView"
@@ -139,17 +154,18 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/rangliste"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="458dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/statistik"
-        app:layout_constraintEnd_toStartOf="@+id/button_settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rangliste_text" android:contentDescription="TODO" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -25,8 +25,10 @@
         <activity
             android:name=".newGamePopUp"
             android:theme="@style/AppTheme.popStyle" />
-        <activity android:name=".winningPopUp"
-            android:theme="@style/AppTheme.popStyle"></activity>
+        <activity
+            android:name=".winningPopUp"
+            android:theme="@style/AppTheme.popStyle" />
+        <activity android:name=".anleitung"></activity>
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lifeselect_text" />
+        app:srcCompat="@drawable/player_select_text" />
 
     <GridLayout
         android:id="@+id/gridLayout"

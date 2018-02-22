@@ -10,18 +10,28 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 public class settings extends AppCompatActivity {
-    public static Button statButton;
+    public static Button statButton, anleitungButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         statButton = findViewById(R.id.button_statistik);
+        anleitungButton = findViewById(R.id.button_anleitung);
 
+        anleitungButton.setOnClickListener(anleitungListener);
         statButton.setOnClickListener(statListener);
         setButtonStat();
 
     }
+
+    View.OnClickListener anleitungListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(settings.this, anleitung.class));
+
+        }
+    };
 
 
     View.OnClickListener statListener = new View.OnClickListener() {
@@ -32,11 +42,11 @@ public class settings extends AppCompatActivity {
                 //Button ändern + statistik entfernen
                 mainScreen.cl.setVisibility(View.INVISIBLE);
                 status=false;
-                mainScreen.sv.getLayoutParams().height += 255; //ConstraintLayout.LayoutParams.MATCH_PARENT;
+                mainScreen.sv.getLayoutParams().height += 200; //ConstraintLayout.LayoutParams.MATCH_PARENT;
             } else{
                 mainScreen.cl.setVisibility(View.VISIBLE);
                 status = true;
-                mainScreen.sv.getLayoutParams().height -= 255;
+                mainScreen.sv.getLayoutParams().height -= 200;
 
             }
 

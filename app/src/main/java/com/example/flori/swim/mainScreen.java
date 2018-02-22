@@ -2,10 +2,12 @@ package com.example.flori.swim;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.SystemClock;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,8 @@ public class mainScreen extends AppCompatActivity {
     static ScrollView sv;
     private Chronometer timer;
     player[] tmpPlayers;
+    Display disp;
+    Point size;
 
 
     @Override
@@ -42,6 +46,7 @@ public class mainScreen extends AppCompatActivity {
         timer.start();
 
         tmpPlayers = new player[10];
+
 
         refreshStats();
         insertBoxes();
@@ -154,7 +159,7 @@ public class mainScreen extends AppCompatActivity {
                 tmpLife.setText("Schwimmt");
 
             }else if(tmpPlayerLife == -1){
-                tmpLife.setText("Tod");
+                tmpLife.setText("Ertrunken");
 
             }else{
                 tmpLife.setText("" + tmpPlayerLife);

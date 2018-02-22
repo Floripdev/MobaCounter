@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">swim</string>
+    <string name="beschreibung"><![CDATA[<b><h1>Schwimmen Spielregeln</h1></b>
+        <b><h3>Ziel des Spiels</h3></b>
+        Um schwimmen zu spielen wird ein Paket mit 32 Skatkarten benötigt. Ziel des Spiels besteht darin, möglichst viele sinnvolle Kombinationen zu sammeln und nicht die Kombination mit dem geringsten Punktewert zu haben. Während des Spiels können die Spieler durch tauschen Kombinationen bilden.\n
+       <b><h3>Werte der Karten</h3></b>
+       <ol>
+       <li><i>Ein Ass zählt elf Punkte</i></li>
+       <li><i>Eine Bildkarte (König, Dame, Bube) zählt 10 Punkte</i></li>
+       <li><i>die Zahlenkarten 10, 9, 8, 7 zählen entsprechend ihren Werten</i></li>
+       </ol>
+       Es gibt zwei verschiedene möglichkeiten Kombinationen zu bilden. Entweder man sammelt Karten mit dem gleichen Symbol (Herz, Kreuz, Pik und Karo), oder man Sammelt Karten mit dem Selben Rang. Zum Beispiel drei 7er oder drei Könige.  Die höchste Punktzahl die erreicht werden kann ist 31 dabei würde eine Hand zum Beispiel aus einem Ass, einem König und einer 10 bestehen. Hat man aber 3  Karten vom gleichen Rang hat man 30,5 Punkte. "
+       ]]> </string>
 </resources>

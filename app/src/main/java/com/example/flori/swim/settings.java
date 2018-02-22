@@ -1,13 +1,16 @@
 package com.example.flori.swim;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class settings extends AppCompatActivity {
     public static Button statButton, anleitungButton;
@@ -42,11 +45,11 @@ public class settings extends AppCompatActivity {
                 //Button ändern + statistik entfernen
                 mainScreen.cl.setVisibility(View.INVISIBLE);
                 status=false;
-                mainScreen.sv.getLayoutParams().height += 200; //ConstraintLayout.LayoutParams.MATCH_PARENT;
+                mainScreen.sv.getLayoutParams().height += mainScreen.cl.getLayoutParams().height; // 200
             } else{
                 mainScreen.cl.setVisibility(View.VISIBLE);
                 status = true;
-                mainScreen.sv.getLayoutParams().height -= 200;
+                mainScreen.sv.getLayoutParams().height -= mainScreen.cl.getLayoutParams().height;
 
             }
 
@@ -58,7 +61,6 @@ public class settings extends AppCompatActivity {
 
     public void setButtonStat(){
         if(playerSelect.activeGame.getStatus()){
-            //Button ändern + statistik entfernen
             statButton.setBackgroundResource(R.drawable.button_stat_on);
 
         } else{

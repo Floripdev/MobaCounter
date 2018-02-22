@@ -8,15 +8,15 @@ import android.widget.Button;
 
 public class askForNames extends AppCompatActivity {
 
-    //public static game activeGame;
+    private Button bNo, bYes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_for_names);
-        Button bNo, bYes;
 
 
+        //Buttons holen und Listener setzen
         bNo = findViewById(R.id.button_no);
         bYes = findViewById(R.id.button_yes);
 
@@ -38,7 +38,7 @@ public class askForNames extends AppCompatActivity {
             playerSelect.activeGame.createPlayers();
 
             if(view.getId() == R.id.button_no){
-                //jump to next Screen and create standard names
+                //Standardnamen setzen und zur Lebensauswahl-Activity springen
                 for(int i=0; i < playerSelect.activeGame.getPlayerCnt(); i++){
                     playerSelect.activeGame.players[i].setplayerName(i+1);
 
@@ -47,7 +47,7 @@ public class askForNames extends AppCompatActivity {
                 startActivity(new Intent(askForNames.this, lifeSelect.class));
 
             } else{
-                //jump to playerName Screens
+                //Springt in die Namenseingabe-Activity
                 finish();
                 startActivity(new Intent(askForNames.this, insertName.class));
 

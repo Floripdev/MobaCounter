@@ -6,7 +6,7 @@ import android.text.Html;
 import android.widget.TextView;
 
 public class anleitung extends AppCompatActivity {
-    TextView text;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

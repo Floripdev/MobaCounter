@@ -9,7 +9,8 @@ import android.widget.EditText;
 
 public class lifeSelect extends AppCompatActivity {
 
-    EditText lifeText;
+    private EditText lifeText;
+    private Button accept, plus, minus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +18,18 @@ public class lifeSelect extends AppCompatActivity {
         setContentView(R.layout.activity_life_select);
         lifeText = findViewById(R.id.lifeInput);
 
-        Button accept = findViewById(R.id.button_accept);
-        Button plus = findViewById(R.id.button_plus);
-        Button minus = findViewById(R.id.button_minus);
+        accept = findViewById(R.id.button_accept);
+        plus = findViewById(R.id.button_plus);
+        minus = findViewById(R.id.button_minus);
 
 
 
-            accept.setOnClickListener(lifeListener);
-            plus.setOnClickListener(sideButtons);
-            minus.setOnClickListener(sideButtons);
+        accept.setOnClickListener(lifeListener);
+        plus.setOnClickListener(sideButtons);
+        minus.setOnClickListener(sideButtons);
 
-        }
+    }
+
     @Override
     public void onBackPressed() {
 

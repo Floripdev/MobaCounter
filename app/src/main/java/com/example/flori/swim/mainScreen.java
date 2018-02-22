@@ -15,16 +15,18 @@ import android.widget.Chronometer;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class mainScreen extends AppCompatActivity {
 
-    View[] v = new View[playerSelect.activeGame.getPlayerCnt()];
-    static ConstraintLayout cl;
-    static ScrollView sv;
+    private View[] v = new View[playerSelect.activeGame.getPlayerCnt()];
+    public static ConstraintLayout cl;
+    public static ScrollView sv;
     private Chronometer timer;
-    player[] tmpPlayers;
-    Display disp;
-    Point size;
+    private player[] tmpPlayers = new player[10];
+    //private static game undoPlayers;
+    private boolean startOnce = false;
+    private Button settingsButton, newButton;
 
 
     @Override
@@ -32,37 +34,55 @@ public class mainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        Button settingsButton = findViewById(R.id.button_settings);
+        //Button holen und Listener setzen für Settings_Button
+        settingsButton = findViewById(R.id.button_settings);
         settingsButton.setOnClickListener(settingsListener);
 
-        Button newButton = findViewById(R.id.button_new);
+        //Button holen und Listener setzen für New_Game_Button
+        newButton = findViewById(R.id.button_new);
         newButton.setOnClickListener(newGameListener);
 
-        cl = findViewById(R.id.statistik);
+
+
+        //Constraint Layout nur einmal holen! sonst fehler bei height berechnung & Player für undo holen damit nicht Null auf player Array geschreiben wird
+        if(!startOnce){
+            //undoPlayers = playerSelect.activeGame;
+            cl = findViewById(R.id.statistik); //TODO: test ohne once
+            startOnce = true;
+
+        }
+
+        //ScrollView für height berechnung holen
         sv = findViewById(R.id.scrollView3);
 
+        //Timer(Chronometer) holen und starten, sobald Activity aufgerufen wird/Das Spiel gestartet wird
         timer = (Chronometer) findViewById(R.id.timer);
         timer.setBase(SystemClock.elapsedRealtime());
         timer.start();
 
-        tmpPlayers = new player[10];
-
-
-        refreshStats();
-        insertBoxes();
-        insertValues();
-        initListener();
+        //Inhalte in mainActivity laden udn Listener setzen
+        refreshStats(); //holt die Stats aus der game-Class
+        insertBoxes(); //Fügt die Spieler-Boxen ein
+        insertValues(); //Fügt die Daten in die Spieler-Boxen ein
+        initListener(); //Initalisiert die Listener
 
 
 
 
     }
+
+    //Keine Aktion beim drücken der back-Taste
     @Override
     public void onBackPressed() {
+       /* playerSelect.activeGame = undoPlayers;
+        insertValues();
+        refreshStats();
+*/
 
     }
 
 
+    //Startet ein neues Spiel
     View.OnClickListener newGameListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -71,19 +91,23 @@ public class mainScreen extends AppCompatActivity {
         }
     };
 
+    //Listener für die Blitz-Buttons
     View.OnClickListener flashListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Button b = (Button) view;
             int boxNumber = Integer.parseInt(b.getText().toString());
             playerSelect.activeGame.flash(boxNumber);
+            //Wenn Leben -1 ist wird der Zähler für die Runden und Blitze nicht hoch gezählt
             if(playerSelect.activeGame.players[boxNumber].getLife() != -1){
                 playerSelect.activeGame.countFlashUp();
                 playerSelect.activeGame.countRoundsUp();
 
             }
             tmpPlayers = playerSelect.activeGame.players;
+            //undoPlayers = playerSelect.activeGame;
             playerSelect.activeGame.players = bubblesort(tmpPlayers);
+            //mainActivity aktualisieren
             insertValues();
             refreshStats();
             gameIsFinished();
@@ -102,6 +126,7 @@ public class mainScreen extends AppCompatActivity {
 
             }
             tmpPlayers = playerSelect.activeGame.players;
+            //undoPlayers = playerSelect.activeGame;
             playerSelect.activeGame.players = bubblesort(tmpPlayers);
             insertValues();
             refreshStats();
@@ -151,8 +176,8 @@ public class mainScreen extends AppCompatActivity {
 
     public void insertValues(){
         for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
-            TextView tmpName = v[i].findViewById(R.id.pos1_name);
-            TextView tmpLife = v[i].findViewById(R.id.pos1_life);
+            TextView tmpName = v[i].findViewById(R.id.name_text);
+            TextView tmpLife = v[i].findViewById(R.id.life_text);
             int tmpPlayerLife = playerSelect.activeGame.players[i].getLife();
             tmpName.setText(playerSelect.activeGame.players[i].getPlayerName());
             if(tmpPlayerLife == 0){
@@ -168,13 +193,15 @@ public class mainScreen extends AppCompatActivity {
 
         }
 
+
     }
 
+    //Holt Runden und Blitze aus der Game-Logik und fügt sie in das Text-View ein
     public void refreshStats(){
         TextView flashText = findViewById(R.id.flashView);
         TextView roundsText = findViewById(R.id.roundsView);
-        flashText.setText("" + playerSelect.activeGame.flashes);
-        roundsText.setText("" + playerSelect.activeGame.rounds);
+        flashText.setText("" + playerSelect.activeGame.getFlashesCount());
+        roundsText.setText("" + playerSelect.activeGame.getRoundCount());
 
     }
 

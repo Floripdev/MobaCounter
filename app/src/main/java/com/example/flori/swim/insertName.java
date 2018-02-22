@@ -10,14 +10,15 @@ import android.widget.Toast;
 
 public class insertName extends AppCompatActivity {
 
-    EditText text;
+    private EditText text;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_name);
 
-        Button nextButton = findViewById(R.id.button_next);
+        nextButton = findViewById(R.id.button_next);
         text = findViewById(R.id.playerName);
 
 
@@ -30,6 +31,7 @@ public class insertName extends AppCompatActivity {
 
     }
 
+    //Holt sich den Namen aus dem Textfeld und speichert ihn in die game Logik
     View.OnClickListener next;
 
     {

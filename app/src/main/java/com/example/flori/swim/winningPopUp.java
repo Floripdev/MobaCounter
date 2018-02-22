@@ -13,18 +13,20 @@ import android.widget.TextView;
 
 public class winningPopUp extends Activity {
 
-    TextView winningText;
-    Button newGamButton;
+    private TextView winningText;
+    private Button newGamButton;
+    private int width, height;
+    private DisplayMetrics dm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winning_pop_up);
-        DisplayMetrics dm = new DisplayMetrics();
+        dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
+        width = dm.widthPixels;
+        height = dm.heightPixels;
 
         getWindow().setLayout((int) (width*.8), (int) (height*.5));
 

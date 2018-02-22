@@ -5,8 +5,8 @@ package com.example.flori.swim;
  */
 
 public class player {
-    String name;
-    int life;
+    private String name;
+    private int life;
 
 
     public void setplayerName(int i){

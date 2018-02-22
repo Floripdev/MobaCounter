@@ -11,7 +11,7 @@
         android:layout_marginBottom="5dp">
 
         <TextView
-            android:id="@+id/pos1_life"
+            android:id="@+id/life_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -25,7 +25,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/pos1_name"
+            android:id="@+id/name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -42,9 +42,9 @@
             android:id="@+id/pos1_button_life"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/pos1_name"
-            android:layout_alignStart="@+id/pos1_name"
-            android:layout_below="@+id/pos1_name"
+            android:layout_alignLeft="@+id/life_text"
+            android:layout_alignStart="@+id/name_text"
+            android:layout_below="@+id/name_text"
             android:layout_marginTop="14dp"
             android:textSize="0dp"
             android:background="@drawable/button_life" />

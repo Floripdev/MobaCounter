@@ -13,24 +13,27 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class newGamePopUp extends Activity {
+    private DisplayMetrics dm;
+    private int width, height;
+    private Button resumeButton, newgameButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game_pop_up);
 
-        DisplayMetrics dm = new DisplayMetrics();
+        dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
+        width = dm.widthPixels;
+        height = dm.heightPixels;
 
         getWindow().setLayout((int) (width*.8), (int) (height*.5));
 
-        Button resumeButton = findViewById(R.id.button_resume);
+        resumeButton = findViewById(R.id.button_resume);
         resumeButton.setOnClickListener(resumeListener);
 
-        Button newgameButton = findViewById(R.id.button_new_game);
+        newgameButton = findViewById(R.id.button_new_game);
         newgameButton.setOnClickListener(newgameListener);
 
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

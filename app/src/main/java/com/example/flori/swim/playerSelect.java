@@ -9,13 +9,14 @@ import android.widget.Button;
 public class playerSelect extends AppCompatActivity {
 
     public static game activeGame = new game();
+    private Button buttons[] = new Button[8];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_select);
 
-        final Button buttons[] = new Button[8];
+        //Buttons holen und ins Array speichern
         buttons[0] = findViewById(R.id.playerCnt_2);
         buttons[1] = findViewById(R.id.playerCnt_3);
         buttons[2] = findViewById(R.id.playerCnt_4);
@@ -25,7 +26,7 @@ public class playerSelect extends AppCompatActivity {
         buttons[6] = findViewById(R.id.playerCnt_8);
         buttons[7] = findViewById(R.id.playerCnt_9);
 
-        //listener den Buttons zuweisen
+        //Listener den Buttons zuweisen
         for(int i = 0; i < 8; i++){
             buttons[i].setOnClickListener(buttonCount);
 
@@ -36,6 +37,7 @@ public class playerSelect extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(playerSelect.this, startScreen.class));
 
     }
 
@@ -45,50 +47,34 @@ public class playerSelect extends AppCompatActivity {
             switch (view.getId()){
                 case R.id.playerCnt_2:
                     activeGame.setPlayerCnt(2);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_3:
                     activeGame.setPlayerCnt(3);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_4:
                     activeGame.setPlayerCnt(4);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_5:
                     activeGame.setPlayerCnt(5);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_6:
                     activeGame.setPlayerCnt(6);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_7:
                     activeGame.setPlayerCnt(7);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_8:
                     activeGame.setPlayerCnt(8);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
                 case R.id.playerCnt_9:
                     activeGame.setPlayerCnt(9);
-                    //String h = Integer.toString(activeGame.getPlayerCnt());
-                    //Toast.makeText(playerSelect.this, h, Toast.LENGTH_SHORT).show();
                     break;
 
             }

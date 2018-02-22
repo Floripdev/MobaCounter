@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class startScreen extends AppCompatActivity {
+    private Button start_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,7 @@ public class startScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_screen);
 
-        Button start_button = findViewById(R.id.start_button);
+        start_button = findViewById(R.id.start_button);
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +34,6 @@ public class startScreen extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        finish();
     }
 }

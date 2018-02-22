@@ -5,12 +5,12 @@ package com.example.flori.swim;
  */
 
 public class game {
-   static int playerCnt;
-   static int playerTmp = 0;
-   static int flashes = 0;
-   static int rounds = 0;
-   boolean status = true;
-   player winner;
+   private int playerCnt;
+   private int playerTmp = 0;
+   private int flashes = 0;
+   private int rounds = 0;
+   private boolean status = true;
+   private player winner;
 
     player players[] = new player[10];
 
@@ -19,10 +19,6 @@ public class game {
 
     }
     public int getPlayerCnt(){
-
-
-
-
         return playerCnt;
 
     }
@@ -60,6 +56,17 @@ public class game {
         flashes++;
 
     }
+
+    public int getRoundCount(){
+        return rounds;
+
+    }
+
+    public int getFlashesCount(){
+        return flashes;
+
+    }
+
     public void flash(int player){
         for(int i = 0; i < playerCnt; i++){
             if(i != player){

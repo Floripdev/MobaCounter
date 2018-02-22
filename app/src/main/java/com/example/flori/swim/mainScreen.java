@@ -21,7 +21,7 @@ public class mainScreen extends AppCompatActivity {
     static ScrollView sv;
     private Chronometer timer;
     player[] tmpPlayers;
-    player winner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,8 +210,8 @@ public class mainScreen extends AppCompatActivity {
         if(finished){
             for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
                 if(playerSelect.activeGame.players[i].getLife() != -1){
-                    winner = playerSelect.activeGame.players[i];
-                    //activity starten
+                    playerSelect.activeGame.setWinner(playerSelect.activeGame.players[i]);
+                    startActivity(new Intent(mainScreen.this, winningPopUp.class));
 
                 }
 
@@ -219,6 +219,7 @@ public class mainScreen extends AppCompatActivity {
 
         }
     }
+
 
 
 }

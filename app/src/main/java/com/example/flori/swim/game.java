@@ -10,6 +10,7 @@ public class game {
    static int flashes = 0;
    static int rounds = 0;
    boolean status = true;
+   player winner;
 
     player players[] = new player[10];
 
@@ -82,6 +83,16 @@ public class game {
 
     public void setStatus(boolean b){
         status = b;
+
+    }
+
+    public void setWinner(player w){
+        winner = w;
+
+    }
+
+    public player getWinner(){
+        return winner;
 
     }
 

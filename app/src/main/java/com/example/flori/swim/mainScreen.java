@@ -20,7 +20,8 @@ public class mainScreen extends AppCompatActivity {
     static ConstraintLayout cl;
     static ScrollView sv;
     private Chronometer timer;
-    player tmpPlayers[];
+    player[] tmpPlayers;
+    player winner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class mainScreen extends AppCompatActivity {
         timer = (Chronometer) findViewById(R.id.timer);
         timer.setBase(SystemClock.elapsedRealtime());
         timer.start();
+
+        tmpPlayers = new player[10];
 
         refreshStats();
         insertBoxes();
@@ -75,9 +78,10 @@ public class mainScreen extends AppCompatActivity {
 
             }
             tmpPlayers = playerSelect.activeGame.players;
-
+            playerSelect.activeGame.players = bubblesort(tmpPlayers);
             insertValues();
             refreshStats();
+            gameIsFinished();
 
         }
     };
@@ -92,8 +96,11 @@ public class mainScreen extends AppCompatActivity {
                 playerSelect.activeGame.countRoundsUp();
 
             }
+            tmpPlayers = playerSelect.activeGame.players;
+            playerSelect.activeGame.players = bubblesort(tmpPlayers);
             insertValues();
             refreshStats();
+            gameIsFinished();
 
         }
     };
@@ -165,21 +172,53 @@ public class mainScreen extends AppCompatActivity {
         roundsText.setText("" + playerSelect.activeGame.rounds);
 
     }
-/*
-    public player bubblesort(player zusortieren) {
-        int temp;
-        for(int i=1; i<zusortieren; i++) {
-            for(int j=0; j<zusortieren-i; j++) {
-                if(zusortieren[j]>zusortieren[j+1]) {
-                    temp=zusortieren[j];
-                    zusortieren[j]=zusortieren[j+1];
-                    zusortieren[j+1]=temp;
+
+    public player[] bubblesort(player[] sortplayers) {
+        player temp;
+        for(int i=1; i<sortplayers.length; i++) {
+            for(int j=0; j<sortplayers.length-i; j++) {
+                if(sortplayers[j] != null && sortplayers[j+1] != null){
+                    if(sortplayers[j].getLife()<sortplayers[j+1].getLife()) {
+                        temp=sortplayers[j];
+                        sortplayers[j]=sortplayers[j+1];
+                        sortplayers[j+1]=temp;
+                    }
+
                 }
+
 
             }
         }
-        return zusortieren;
-    }*/
+        return sortplayers;
+    }
+
+    public void gameIsFinished(){
+        int tmp = 0;
+        boolean finished = false;
+        for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
+            if(playerSelect.activeGame.players[i].getLife() == -1){
+                tmp++;
+                if(tmp == (playerSelect.activeGame.getPlayerCnt()-1)){
+                    finished = true;
+
+                }
+
+            }
+
+        }
+
+        if(finished){
+            for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
+                if(playerSelect.activeGame.players[i].getLife() != -1){
+                    winner = playerSelect.activeGame.players[i];
+                    //activity starten
+
+                }
+
+            }
+
+        }
+    }
 
 
 }

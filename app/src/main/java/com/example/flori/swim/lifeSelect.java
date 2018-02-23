@@ -41,7 +41,7 @@ public class lifeSelect extends AppCompatActivity {
         public void onClick(View view) {
             String x_string = lifeText.getText().toString();
             int x = Integer.parseInt(x_string);
-            playerSelect.activeGame.initLifes(x);
+            playerSelect.activeGame.initLifes(x); //Leben Initalisieren
             finish();
             startActivity(new Intent(lifeSelect.this, mainScreen.class));
 
@@ -54,7 +54,7 @@ public class lifeSelect extends AppCompatActivity {
             String x_string = lifeText.getText().toString();
             int x = Integer.parseInt(x_string);
             if(view.getId() == R.id.button_minus){
-                if(x != 0){
+                if(x != 0){ //Nicht ausführen wenn Textfeld bereits 0 damit keine Minus-Werte entstehen können
                     x--;
                     lifeText.setText("" + x);
 

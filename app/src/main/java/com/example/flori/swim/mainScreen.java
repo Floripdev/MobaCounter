@@ -224,6 +224,7 @@ public class mainScreen extends AppCompatActivity {
         return sortplayers;
     }
 
+    //Funktion zum
     public void gameIsFinished(){
         int tmp = 0;
         boolean finished = false;

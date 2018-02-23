@@ -47,6 +47,7 @@ public class newGamePopUp extends Activity {
 
     }
 
+    //Activity beenden falls auf fortsetzen gedrückt wird
     View.OnClickListener resumeListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -55,6 +56,7 @@ public class newGamePopUp extends Activity {
         }
     };
 
+    //Neues Spielk starten
     View.OnClickListener newgameListener= new View.OnClickListener(){
 
         @Override

@@ -9,10 +9,12 @@ public class player {
     private int life;
 
 
+    //Standard Name vergeben
     public void setplayerName(int i){
-        name = "Player_" + i ;
+        name = "Spieler_" + i ;
 
     }
+    //Name vergeben
     public void setPlayerName(String n){
         name = n;
 
@@ -33,6 +35,7 @@ public class player {
 
     }
 
+    //Leben um 1 verringern. Wenn das Leben schon -1 ist wird das Leben nicht mehr runter gezählt
     public int decLife(){
         if(life == -1){
             return life;

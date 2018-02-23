@@ -43,6 +43,7 @@ public class winningPopUp extends Activity {
         @Override
         public void onClick(View view) {
             finish();
+            playerSelect.activeGame.setZero();
             startActivity(new Intent(winningPopUp.this, playerSelect.class));
         }
     };

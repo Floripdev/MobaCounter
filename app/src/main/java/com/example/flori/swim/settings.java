@@ -24,7 +24,7 @@ public class settings extends AppCompatActivity {
 
         anleitungButton.setOnClickListener(anleitungListener);
         statButton.setOnClickListener(statListener);
-        setButtonStat();
+        setButtonStat(); //Bei start der Activity Statistik Button on/off richtig anzeigen
 
     }
 
@@ -42,11 +42,12 @@ public class settings extends AppCompatActivity {
         public void onClick(View view) {
             boolean status = playerSelect.activeGame.getStatus();
             if(status){
-                //Button ändern + statistik entfernen
+                //statistik entfernen
                 mainScreen.cl.setVisibility(View.INVISIBLE);
                 status=false;
                 mainScreen.sv.getLayoutParams().height += mainScreen.cl.getLayoutParams().height; // 200
             } else{
+                //Statistik einfügen
                 mainScreen.cl.setVisibility(View.VISIBLE);
                 status = true;
                 mainScreen.sv.getLayoutParams().height -= mainScreen.cl.getLayoutParams().height;
@@ -54,7 +55,7 @@ public class settings extends AppCompatActivity {
             }
 
             playerSelect.activeGame.setStatus(status);
-            setButtonStat();
+            setButtonStat(); //Button aktualisieren
 
         }
     };

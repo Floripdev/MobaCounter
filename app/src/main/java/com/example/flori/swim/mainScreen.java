@@ -144,6 +144,8 @@ public class mainScreen extends AppCompatActivity {
     };
 
 
+
+    //Initalisiert die Listener
     public void initListener(){
         for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
             Button tmpLifeButton = v[i].findViewById(R.id.pos1_button_life);
@@ -157,6 +159,7 @@ public class mainScreen extends AppCompatActivity {
 
     }
 
+    //Fügt die PlayerBoxen ein
     public void insertBoxes(){
         LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LinearLayout mainLayout = findViewById(R.id.mainLayout);
@@ -174,6 +177,7 @@ public class mainScreen extends AppCompatActivity {
 
     }
 
+    //Fügt die Leben/Namen in die Player-Boxen ein
     public void insertValues(){
         for(int i = 0; i < playerSelect.activeGame.getPlayerCnt(); i++){
             TextView tmpName = v[i].findViewById(R.id.name_text);
@@ -205,6 +209,7 @@ public class mainScreen extends AppCompatActivity {
 
     }
 
+    //Bubblesort zum sortieren des player-Arrays
     public player[] bubblesort(player[] sortplayers) {
         player temp;
         for(int i=1; i<sortplayers.length; i++) {
@@ -224,7 +229,7 @@ public class mainScreen extends AppCompatActivity {
         return sortplayers;
     }
 
-    //Funktion zum
+    //Algorithmus der erkennt ob nurnoch 1 Spieler lebt, falls dies zutrifft wird das Spiel beendet
     public void gameIsFinished(){
         int tmp = 0;
         boolean finished = false;

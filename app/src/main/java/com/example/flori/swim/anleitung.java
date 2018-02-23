@@ -13,7 +13,7 @@ public class anleitung extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anleitung);
         text = findViewById(R.id.anleitung_text);
-        text.setText(Html.fromHtml(getString(R.string.beschreibung)));
+        text.setText(Html.fromHtml(getString(R.string.beschreibung))); //Anleitung mit HTML-Formatierung darstellen
 
     }
 }

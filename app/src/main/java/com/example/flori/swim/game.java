@@ -12,7 +12,9 @@ public class game {
    private boolean status = true;
    private player winner;
 
-    player players[] = new player[10];
+    player players[] = new player[10]; //Die Spieler gespeichert in einem Array
+
+    //Setter und Getter für playerCnt
 
     public void setPlayerCnt(int count){
         playerCnt = count;
@@ -23,6 +25,7 @@ public class game {
 
     }
 
+    //Spieler Initalisieren
     public void createPlayers(){
         for(int i = 0; i < playerCnt; i++) {
             players[i] = new player();
@@ -31,14 +34,18 @@ public class game {
 
     }
 
+    //Tempörären zähler um 1 erhöhen
     public void incTmp(){
         playerTmp++;
 
     }
+
     public int getPlayerTmp(){
         return playerTmp;
 
     }
+
+    //Initalisiert die Leben für jeden Spieler
     public void initLifes(int lifes){
         for(int i = 0; i < playerCnt; i++){
             players[i].initLife(lifes);
@@ -47,6 +54,7 @@ public class game {
 
     }
 
+    //Getter und Setter für Runden und Blitze
     public void countRoundsUp(){
         rounds++;
 
@@ -67,6 +75,7 @@ public class game {
 
     }
 
+    //Allen Spielern ein Leben abziehen auser dem Spieler der den Blitz hatte
     public void flash(int player){
         for(int i = 0; i < playerCnt; i++){
             if(i != player){
@@ -78,11 +87,14 @@ public class game {
 
     }
 
+
+    //Runden und Blitze auf 0 setzen
     public void setZero(){
         flashes = 0;
         rounds = 0;
 
     }
+
     public boolean getStatus(){
         return status;
 
@@ -93,6 +105,7 @@ public class game {
 
     }
 
+    //Den Gewinner setzen und holen
     public void setWinner(player w){
         winner = w;
 
